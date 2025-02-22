@@ -1,24 +1,33 @@
 import React, { useState } from 'react';
 import { Button, TextField, Container, Typography } from '@mui/material';
 import { toast,ToastContainer } from 'react-toastify';
+import { useNavigate } from "react-router";
+
 
 
 const Login = () => {
+  let navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSignIn = () => {
-    
     
     if(!email){
         console.log("click1");
         
         toast.info("Please Enter Email")
     }
-    if(!password){
+    else if(!password){
         toast.info("Please Enter the password")
     }
-    // alert(`Signing in with email: ${email} and password: ${password}`);
+    else if(email==='user@gmail.com' && password==='1'){
+        navigate('/user', { state: { flag: true } })
+    }
+    else{
+      toast.error("Invalid Credintals")
+
+    }
+
   };
 
   return (
