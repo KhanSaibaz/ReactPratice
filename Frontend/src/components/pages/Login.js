@@ -1,58 +1,55 @@
 import React, { useState } from 'react';
 import { Button, TextField, Container, Typography } from '@mui/material';
-import { toast,ToastContainer } from 'react-toastify';
-
+import { toast, ToastContainer } from 'react-toastify';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSignIn = () => {
-    
-    
-    if(!email){
-        console.log("click1");
-        
-        toast.info("Please Enter Email")
+    if (!username) {
+      toast.info("Please Enter Username");
     }
-    if(!password){
-        toast.info("Please Enter the password")
+    if (!password) {
+      toast.info("Please Enter the Password");
     }
-    // alert(`Signing in with email: ${email} and password: ${password}`);
+    // alert(`Signing in with username: ${username} and password: ${password}`);
   };
 
   return (
-    <Container maxWidth="xs">
-      <Typography variant="h4" gutterBottom>
-        Login
-      </Typography>
-      <TextField
-        label="Email"
-        variant="outlined"
-        fullWidth
-        margin="normal"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <TextField
-        label="Password"
-        type="password"
-        variant="outlined"
-        fullWidth
-        margin="normal"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <Button
-        variant="contained"
-        color="primary"
-        fullWidth
-        onClick={handleSignIn}
-      >
-        Sign In
-      </Button>
-      <ToastContainer />
-    </Container>
+    <div style={{ marginTop: "10rem" }}>
+      <Container maxWidth="xs">
+        <Typography variant="h4" gutterBottom>
+          Login
+        </Typography>
+        <TextField
+          label="Username"
+          variant="outlined"
+          fullWidth
+          margin="normal"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <TextField
+          label="Password"
+          type="password"
+          variant="outlined"
+          fullWidth
+          margin="normal"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <Button
+          variant="contained"
+          color="primary"
+          fullWidth
+          onClick={handleSignIn}
+        >
+          Sign In
+        </Button>
+        <ToastContainer />
+      </Container>
+    </div>
   );
 };
 
