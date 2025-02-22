@@ -4,9 +4,11 @@ import Navbar from './components/pages/Navbar';
 import Users from './components/pages/Users';
 
 
+
 function App() {
   return (
     <>
+
     <Router>
     <Navbar/>
       <Routes>
@@ -15,6 +17,7 @@ function App() {
       </Routes>
     </Router>
      
+
 
     </>
   );
