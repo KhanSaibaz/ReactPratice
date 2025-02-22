@@ -1,6 +1,6 @@
 import { BaseApi } from "../baseQuery/BaseApi"; 
 
-export const userApi = BaseApi.injectEndpoints({
+export const UserApi = BaseApi.injectEndpoints({
   endpoints: (builder) => ({
     getUsers: builder.query({
       query: () => "/users",
@@ -8,4 +8,4 @@ export const userApi = BaseApi.injectEndpoints({
   }),
 });
 
-export const { useGetUsersQuery } = userApi;
+export const { useGetUsersQuery } = UserApi;
