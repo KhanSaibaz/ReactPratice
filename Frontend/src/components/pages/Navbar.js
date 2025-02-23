@@ -18,6 +18,7 @@ const pages = [
   { label: "Home", path: "/" },
   { label: "User", path: "/user" },
   { label: "About", path: "/about" },
+  { label: "Counter", path: "/counter" },
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
