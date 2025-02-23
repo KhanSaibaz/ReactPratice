@@ -11,3 +11,5 @@
     }),
     endpoints: () => ({}), 
   });
+
+export default BaseApi;
