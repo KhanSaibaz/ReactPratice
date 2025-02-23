@@ -8,8 +8,12 @@ export const userApi=BaseApi.injectEndpoints({
 
           getProduct:builder.query({
             query:()=>"./comments"
+          }),
+          getPhotos:builder.query({
+
+            query:()=>"./photos"
           })
     })
 })
 
-export const {useGetUsersQuery,useGetProductQuery} =userApi
+export const {useGetUsersQuery,useGetProductQuery,useGetPhotosQuery} =userApi

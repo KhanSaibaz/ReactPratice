@@ -1,19 +1,33 @@
 import React, { useState } from 'react';
 import { Button, TextField, Container, Typography } from '@mui/material';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast,ToastContainer } from 'react-toastify';
+import { useNavigate } from "react-router";
+
+
 
 const Login = () => {
-  const [username, setUsername] = useState('');
+  let navigate = useNavigate();
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSignIn = () => {
-    if (!username) {
-      toast.info("Please Enter Username");
+    
+    if(!email){
+        console.log("click1");
+        
+        toast.info("Please Enter Email")
     }
-    if (!password) {
-      toast.info("Please Enter the Password");
+    else if(!password){
+        toast.info("Please Enter the password")
     }
-    // alert(`Signing in with username: ${username} and password: ${password}`);
+    else if(email==='user@gmail.com' && password==='1'){
+        navigate('/home', { state: { flag: true } })
+    }
+    else{
+      toast.error("Invalid Credintals")
+
+    }
+
   };
 
   return (
@@ -23,12 +37,12 @@ const Login = () => {
           Login
         </Typography>
         <TextField
-          label="Username"
+          label="email"
           variant="outlined"
           fullWidth
           margin="normal"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <TextField
           label="Password"
