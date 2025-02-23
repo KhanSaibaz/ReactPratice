@@ -15,7 +15,7 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 
 const pages = [
-  { label: "Home", path: "/" },
+  { label: "Home", path: "/home" },
   { label: "User", path: "/user" },
   { label: "About", path: "/about" },
   { label: "Counter", path: "/counter" },
