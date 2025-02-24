@@ -5,7 +5,7 @@ import { increment, decrement, incrementByAmount } from '../slices/countersilces
 function Counter() {
     const dispatch = useDispatch();
     const counterValue = useSelector((state) => state.counter.value); 
-    const [amount, setAmount] = useState(0); // State for input value
+    const [amount, setAmount] = useState(0); 
 
     return (
         <div>
